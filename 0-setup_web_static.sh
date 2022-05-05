@@ -14,7 +14,7 @@ sudo mkdir -p /data/web_static/releases/test /data/web_static/shared
 #--adds test string
 echo "<h1>Welcome to www.mwysam.tech</h1>" > /data/web_static/releases/test/index.html
 
-#--prevent overwrite
+#--prevents an overwrite
 if [ -d "/data/web_static/current" ];
 then
     echo "path /data/web_static/current exists"
