@@ -1,6 +1,6 @@
 !/usr/bin/python3
 '''
-fabric script to distribute an archive to web servers
+Fabric script to distribute an archive to web servers
 ----NEEDS TO REVISIT SCRIPT
 '''
 
@@ -10,9 +10,11 @@ from os.path import exists
 
 env.hosts = ['34.75.110.80', '3.235.229.195']
 
-
 def do_deploy(archive_path):
-    '''distributes an archive to my web servers'''
+    """
+    copies archive files from local machine to servers
+    """
+
     if not exists(archive_path):
         return False
     try:
