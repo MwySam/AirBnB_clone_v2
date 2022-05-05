@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+!/usr/bin/python3
 '''
 fabric script to distribute an archive to web servers
 ----NEEDS TO REVISIT SCRIPT
@@ -8,7 +8,7 @@ from fabric.api import put, run, env
 from os.path import exists
 
 
-env.hosts = ['34.138.32.248, '3.226.74.205']
+env.hosts = ['34.75.110.80, '3.235.229.195']
 
 
 def do_deploy(archive_path):
