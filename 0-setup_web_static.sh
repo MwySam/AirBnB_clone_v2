@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
-# sets up my web servers for the deployment of web_static
+# sets up web servers for the deployment of web_static
 
-#--updating the packages
+#--updates the packages
 sudo apt-get -y update
 sudo apt-get -y install nginx
 
-#--configure firewall
+#--configures a firewall
 sudo ufw allow 'Nginx HTTP'
 
-#--created the dir
+#--creates the folders
 sudo mkdir -p /data/web_static/releases/test /data/web_static/shared
 
 #--adds test string
-echo "<h1>Welcome to www.beta-scribbles.tech</h1>" > /data/web_static/releases/test/index.html
+echo "<h1>Welcome to www.mwysam.tech</h1>" > /data/web_static/releases/test/index.html
 
 #--prevent overwrite
 if [ -d "/data/web_static/current" ];
@@ -28,5 +28,5 @@ sudo chown -hR ubuntu:ubuntu /data
 sudo sed -i '38i\\tlocation /hbnb_static/ {\n\t\talias /data/web_static/current/;\n\t}\n' /etc/nginx/sites-available/default
 sudo ln -sf '/etc/nginx/sites-available/default' '/etc/nginx/sites-enabled/default'
 
-#--restart NGINX
+#--restart NGINX service
 sudo service nginx restart
